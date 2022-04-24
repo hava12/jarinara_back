@@ -1,0 +1,9 @@
+server:
+  port: 8081
+
+springdoc:
+  swagger-ui:
+    path: apidoc.html
+  version: v1
+  paths-to-match:
+    - /**
