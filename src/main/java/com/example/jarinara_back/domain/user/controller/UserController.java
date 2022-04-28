@@ -15,4 +15,10 @@ public class UserController {
 		return ResponseEntity.ok("ok");
 	}
 
+	@PostMapping("/login")
+	public ResponseEntity<String> postLogin (@RequestBody UserRequest userRequest) {
+		System.out.println(userRequest);
+		return ResponseEntity.ok("ok");
+	}
+
 }
