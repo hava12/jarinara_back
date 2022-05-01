@@ -1,4 +1,4 @@
-package com.example.jarinara_back.domain.user.controller;
+package com.example.jarinara_back.interfaces.user;
 
 import com.example.jarinara_back.domain.user.request.UserRequest;
 import org.springframework.http.ResponseEntity;

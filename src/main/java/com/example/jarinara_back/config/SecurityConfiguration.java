@@ -16,7 +16,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.usernameParameter("userId")
 			.passwordParameter("password");
 
+		http.logout()
+			.logoutUrl("/logout")
+			.deleteCookies("JSESSIONID");
+
 		http.authorizeRequests()
-			.antMatchers("/**").permitAll();
+			.antMatchers("/login").permitAll();
 	}
 }
