@@ -9,16 +9,16 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 @AllArgsConstructor
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
 	private final UserRepository userRepository;
 
 	public UserEntity create(final UserEntity userEntity) {
-		if(userEntity == null || userEntity.getId() == null) {
+		if(userEntity == null || userEntity.getUserId() == null) {
 			throw new RuntimeException("Invalid Id");
 		}
 
-		final String userId = userEntity.getId();
+		final String userId = userEntity.getUserId();
 
 		if(userRepository.existsById(userId)) {
 			log.warn("Id Already exists {}", userId);
