@@ -13,7 +13,7 @@ public class UserEntity {
 
 	@Id // 기본 키
 	@Column(name = "user_id") // 필드를 컬럼에 매핑
-	private String id;
+	private String userId;
 
 	@Column(name = "user_name")
 	private String userName;

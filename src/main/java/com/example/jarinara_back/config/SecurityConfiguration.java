@@ -3,6 +3,7 @@ package com.example.jarinara_back.config;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -22,5 +23,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests()
 			.antMatchers("/login").permitAll();
+
+		// 세션 고정 보호, 세션 정책 설정
+		http.sessionManagement()
+			.sessionFixation().changeSessionId()
+			.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
 	}
 }
