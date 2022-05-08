@@ -17,6 +17,7 @@ public class UserEntity {
 
 	@Column(name = "user_name")
 	private String userName;
+	private String password;
 
 	private Integer age; // 매핑 어노테이션 생략 시 필드명을 사용해서 컬럼명으로 매핑한다.
 }

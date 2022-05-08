@@ -28,4 +28,9 @@ public class UserServiceImpl implements UserService {
 
 		return userRepository.save(userEntity);
 	}
+
+	@Override
+	public UserEntity getByCredentials(String userId, String password) {
+		return userRepository.findByUserIdAndPassword(userId, password);
+	}
 }

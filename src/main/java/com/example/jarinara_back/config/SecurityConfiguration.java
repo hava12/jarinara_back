@@ -22,7 +22,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.deleteCookies("JSESSIONID");
 
 		http.authorizeRequests()
-			.antMatchers("/login").permitAll();
+			.antMatchers("/**").permitAll()
+			.antMatchers("/h2-console/**").permitAll()
+		.and()
+			.csrf()
+			.ignoringAntMatchers("/h2-console/**").disable()
+			.httpBasic();
 
 		// 세션 고정 보호, 세션 정책 설정
 		http.sessionManagement()
