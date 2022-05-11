@@ -4,6 +4,7 @@ import com.example.jarinara_back.domain.user.entity.UserEntity;
 import com.example.jarinara_back.infrastructure.user.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -30,7 +31,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserEntity getByCredentials(String userId, String password) {
-		return userRepository.findByUserIdAndPassword(userId, password);
+	public UserEntity getByCredentials(String userId, String password, final PasswordEncoder encoder) {
+		UserEntity originalUser = userRepository.findByUserIdAndPassword(userId, password);
+
+		if (originalUser != null && encoder.matches(password, originalUser.getPassword())) {
+			return originalUser;
+		}
+		return null;
 	}
 }
