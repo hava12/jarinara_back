@@ -1,4 +1,4 @@
-package com.example.jarinara_back.domain.user.request;
+package com.example.jarinara_back.domain.user.dto;
 
 import lombok.Data;
 

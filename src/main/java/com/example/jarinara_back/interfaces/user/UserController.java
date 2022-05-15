@@ -4,7 +4,7 @@ import com.example.jarinara_back.application.user.UserService;
 import com.example.jarinara_back.application.user.jwt.TokenProvider;
 import com.example.jarinara_back.domain.user.entity.UserEntity;
 import com.example.jarinara_back.domain.user.mapper.UserMapper;
-import com.example.jarinara_back.domain.user.request.UserDto;
+import com.example.jarinara_back.domain.user.dto.UserDto;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

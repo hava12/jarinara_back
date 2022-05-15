@@ -2,7 +2,7 @@ package com.example.jarinara_back.domain.user.mapper;
 
 import com.example.jarinara_back.common.mapper.GenericMapper;
 import com.example.jarinara_back.domain.user.entity.UserEntity;
-import com.example.jarinara_back.domain.user.request.UserDto;
+import com.example.jarinara_back.domain.user.dto.UserDto;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
